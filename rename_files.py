@@ -1,5 +1,4 @@
 import os
-import time
 
 def validar_inputs_serie():
     nome = input("Nome da série: ")
@@ -31,8 +30,18 @@ def validar_inputs_arquivos():
         print(f"O caminho {caminho_destino} não foi encontrado, insira novamente.")
         validar_inputs_arquivos()
         
-    return caminho_origem, caminho_destino
-
+    print(f"Caminho de origem: {caminho_origem}")
+    print(f"Caminho de destino: {caminho_destino}")
+    
+    print("Os valores passados estão corretos? S/N")
+    resposta = input(" ").upper()
+    
+    if("S" in resposta):
+        return caminho_origem, caminho_destino
+    
+    else:
+        validar_inputs_arquivos()   
+    
 def rename_files():
     print("BEM-VINDO")
     
